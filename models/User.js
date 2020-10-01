@@ -3,7 +3,7 @@ const moment = require('moment');
 
 const UserSchema = new Schema(
     {
-        userName: {
+        username: {
             type: String,
             required: true,
             trim: true
@@ -13,7 +13,7 @@ const UserSchema = new Schema(
             required: true,
             trim: true,
             unique: true,
-            //validate: //insert validaton code here
+            match: [/.+@.+\..+/, "Needs to be valid email"],
         },
         thoughts:[
             {
